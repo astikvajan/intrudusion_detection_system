@@ -1,0 +1,44 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .result {
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .normal {
+            background-color: #e6f3e6;
+            color: green;
+        }
+        .attack {
+            background-color: #f3e6e6;
+            color: red;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result {{ 'attack' if prediction == 'Attack Detected' else 'normal' }}">
+        {{ prediction }}
+    </div>
+    <a href="/" class="back-link">Back to Prediction</a>
+</body>
+</html>
